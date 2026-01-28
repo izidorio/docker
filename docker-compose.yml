@@ -1,8 +1,6 @@
-version: '3.8'
-
 services:
   db:
-    image: postgres:13
+    image: postgres:18.1
     container_name: postgres-db
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
@@ -11,7 +9,4 @@ services:
     ports:
       - "${POSTGRES_PORT}:5432"
     volumes:
-      - ./data:/var/lib/postgresql/data
-
-volumes:
-  pgdata:
+      - ./data:/var/lib/postgresql
